@@ -113,13 +113,14 @@ const SplitWithNavbar = () => {
             
             '
           >
-            Show Code
+          {showCode === false ? "Show Code":"Show Demo" } 
+
           </button>
         </div>
       </div>
 
 
-      <div className="relative bg-gray-50">
+      {showCode === false ? <div className="relative bg-gray-50">
       <Popover className="relative bg-white shadow">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
@@ -421,16 +422,13 @@ const SplitWithNavbar = () => {
           />
         </div>
       </main>
-    </div>
+    </div> : <SplitWithNavbarCode  />}
 
 
 
 
 
-
-      {showCode === true && <SplitWithNavbarCode  />} </>
-
-    
+</>
 
 
   )

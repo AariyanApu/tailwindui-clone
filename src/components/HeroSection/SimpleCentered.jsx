@@ -19,6 +19,8 @@ const SimpleCentered = () => {
 
   return (
     <>
+
+
       <div className='bg-slate-200 max-w-full my-5  sm:flex sm:justify-center md:mt-8 p-5 rounded '>
         <div className=' mr-auto'>
           <p className=' flex w-full rounded-md border border-transparent  px-8 py-3 text-slate-900	 md:py-4 md:px-10 md:text-lg '>
@@ -36,12 +38,15 @@ const SimpleCentered = () => {
             
             '
           >
-            Show Code
+           {showCode === false ? "Show Code":"Show Demo" } 
           </button>
         </div>
       </div>
 
-      <div className='relative overflow-hidden bg-gray-50'>
+
+
+
+      {showCode === false ? <div className='relative overflow-hidden bg-gray-50'>
         <div
           className='hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full'
           aria-hidden='true'
@@ -249,9 +254,7 @@ const SimpleCentered = () => {
             </div>
           </main>
         </div>
-      </div>
-
-      {showCode === true && <SimpleCenteredCode />}
+      </div> : <SimpleCenteredCode />}
     </>
   );
 };
